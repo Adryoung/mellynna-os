@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mellynna OS - Meals & Recipes</title>
+
+    <link
+        rel="stylesheet"
+        href="meals.css"
+    >
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- ============================== -->
+        <!-- SIDEBAR -->
+        <!-- ============================== -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <h2>
+                    🦋 Mellynna OS
+                </h2>
+
+                <p>
+                    Your Life, Organized.
+                </p>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a href="home.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="smart-inbox.html" class="nav-link">
+                    Smart Inbox
+                </a>
+
+                <a href="work.html" class="nav-link">
+                    Work
+                </a>
+
+                <a href="personal.html" class="nav-link">
+                    Personal
+                </a>
+
+                <a href="planner.html" class="nav-link">
+                    Planner
+                </a>
+
+                <a href="grocery.html" class="nav-link">
+                    Grocery
+                </a>
+
+                <a href="expenses.html" class="nav-link">
+                    Expenses
+                </a>
+
+                <a href="meals.html" class="nav-link active">
+                    Meals & Recipes
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="login.html" class="logout-link">
+                    Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ============================== -->
+        <!-- MAIN -->
+        <!-- ============================== -->
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <section class="page-header">
+
+                <div>
+
+                    <p class="page-label">
+                        Food & Kitchen
+                    </p>
+
+                    <h1>
+                        Meals & Recipes 🍳
+                    </h1>
+
+                    <p class="page-description">
+                        Plan meals and keep your favourite recipes in one place.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- SUMMARY -->
+            <!-- ============================== -->
+
+            <section class="summary-grid">
+
+                <div class="summary-card">
+
+                    <p>
+                        Planned Meals
+                    </p>
+
+                    <h2 id="meal-count">
+                        0
+                    </h2>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <p>
+                        Saved Recipes
+                    </p>
+
+                    <h2 id="recipe-count">
+                        0
+                    </h2>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- MEAL PLAN -->
+            <!-- ============================== -->
+
+            <section class="content-card">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Meal Plan
+                        </h2>
+
+                        <p>
+                            Plan what you want to eat.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="show-meal-form"
+                        class="primary-button"
+                    >
+                        + Add Meal
+                    </button>
+
+                </div>
+
+
+
+                <!-- MEAL FORM -->
+
+                <div
+                    id="meal-form"
+                    class="form-card hidden"
+                >
+
+                    <h3 id="meal-form-title">
+                        Add Meal
+                    </h3>
+
+
+                    <div class="form-grid">
+
+                        <label>
+
+                            Day / Date
+
+                            <input
+                                type="text"
+                                id="meal-day"
+                                placeholder="Example: Monday"
+                            >
+
+                        </label>
+
+
+                        <label>
+
+                            Meal Name
+
+                            <input
+                                type="text"
+                                id="meal-name"
+                                placeholder="Example: Sup Bayam"
+                            >
+
+                        </label>
+
+                    </div>
+
+
+                    <label class="notes-label">
+
+                        Notes
+
+                        <textarea
+                            id="meal-notes"
+                            rows="3"
+                            placeholder="Optional..."
+                        ></textarea>
+
+                    </label>
+
+
+                    <div class="form-buttons">
+
+                        <button
+                            type="button"
+                            id="cancel-meal"
+                            class="secondary-button"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="save-meal"
+                            class="primary-button"
+                        >
+                            Save Meal
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    id="meal-list"
+                    class="meal-list"
+                >
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- RECIPES -->
+            <!-- ============================== -->
+
+            <section class="content-card">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            My Recipes
+                        </h2>
+
+                        <p>
+                            Keep simple recipe notes for later.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="show-recipe-form"
+                        class="primary-button"
+                    >
+                        + Add Recipe
+                    </button>
+
+                </div>
+
+
+
+                <!-- RECIPE FORM -->
+
+                <div
+                    id="recipe-form"
+                    class="form-card hidden"
+                >
+
+                    <h3 id="recipe-form-title">
+                        Add Recipe
+                    </h3>
+
+
+                    <label>
+
+                        Recipe Name
+
+                        <input
+                            type="text"
+                            id="recipe-name"
+                            placeholder="Example: English Muffin"
+                        >
+
+                    </label>
+
+
+                    <label class="notes-label">
+
+                        Ingredients
+
+                        <textarea
+                            id="recipe-ingredients"
+                            rows="4"
+                            placeholder="Flour, milk, yeast..."
+                        ></textarea>
+
+                    </label>
+
+
+                    <label class="notes-label">
+
+                        Steps
+
+                        <textarea
+                            id="recipe-steps"
+                            rows="5"
+                            placeholder="Write easy steps here..."
+                        ></textarea>
+
+                    </label>
+
+
+                    <div class="form-buttons">
+
+                        <button
+                            type="button"
+                            id="cancel-recipe"
+                            class="secondary-button"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="save-recipe"
+                            class="primary-button"
+                        >
+                            Save Recipe
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    id="recipe-list"
+                    class="recipe-grid"
+                >
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="meals.js"></script>
+
+</body>
+
+</html>

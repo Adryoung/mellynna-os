@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Mellynna OS - Planner
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="planner.css"
+    >
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- ============================== -->
+        <!-- SIDEBAR -->
+        <!-- ============================== -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <h2>
+                    🦋 Mellynna OS
+                </h2>
+
+                <p>
+                    Your Life, Organized.
+                </p>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a
+                    href="home.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="smart-inbox.html"
+                    class="nav-link"
+                >
+                    Smart Inbox
+                </a>
+
+                <a
+                    href="work.html"
+                    class="nav-link"
+                >
+                    Work
+                </a>
+
+                <a
+                    href="personal.html"
+                    class="nav-link"
+                > 
+                    Personal
+                </a>
+
+                <a
+                    href="planner.html"
+                    class="nav-link active"
+                >
+                    Planner
+                </a>
+
+                <a
+                    href="grocery.html"
+                    class="nav-link"
+                >
+                    Grocery
+                </a>
+
+                <a
+                    href="expenses.html"
+                    class="nav-link"
+                >
+                    Expenses
+                </a>
+
+                <a
+                    href="meals.html"
+                    class="nav-link"
+                >
+                    Meals & Recipes
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a
+                    href="login.html"
+                    class="logout-link"
+                >
+                    Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ============================== -->
+        <!-- MAIN CONTENT -->
+        <!-- ============================== -->
+
+        <main class="main-content">
+
+
+            <!-- ============================== -->
+            <!-- HEADER -->
+            <!-- ============================== -->
+
+            <section class="page-header">
+
+                <div>
+
+                    <p class="page-label">
+                        My Planner
+                    </p>
+
+                    <h1>
+                        Planner 📅
+                    </h1>
+
+                    <p class="page-description">
+                        Plan anything, anytime.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="show-plan-form"
+                    class="primary-button"
+                >
+                    + New Plan
+                </button>
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- PLANNER SUMMARY -->
+            <!-- ============================== -->
+
+            <section class="planner-summary">
+
+
+                <div class="summary-card">
+
+                    <p>
+                        Upcoming Plans
+                    </p>
+
+                    <h2 id="planner-upcoming-count">
+                        0
+                    </h2>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <p>
+                        This Month
+                    </p>
+
+                    <h2 id="planner-month-count">
+                        0
+                    </h2>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <p>
+                        Today
+                    </p>
+
+                    <h2 id="planner-today-count">
+                        0
+                    </h2>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- CALENDAR -->
+            <!-- ============================== -->
+
+            <section class="calendar-card">
+
+
+                <div class="calendar-header">
+
+                    <button
+                        type="button"
+                        id="previous-month"
+                        class="calendar-nav-button"
+                    >
+                        ←
+                    </button>
+
+
+                    <div>
+
+                        <h2 id="calendar-month-title">
+                            August 2026
+                        </h2>
+
+                        <p>
+                            Select a date to view plans and tasks.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="next-month"
+                        class="calendar-nav-button"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+
+
+                <!-- DAY NAMES -->
+
+                <div class="calendar-weekdays">
+
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                    <div>Sun</div>
+
+                </div>
+
+
+
+                <!-- CALENDAR DAYS GENERATED BY JS -->
+
+                <div
+                    id="calendar-grid"
+                    class="calendar-grid"
+                >
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- SELECTED DATE -->
+            <!-- ============================== -->
+
+            <section class="selected-date-card">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-label">
+                            Selected Date
+                        </p>
+
+                        <h2 id="selected-date-title">
+                            Select a date
+                        </h2>
+
+                    </div>
+
+
+                    <span id="selected-date-count">
+                        0 Items
+                    </span>
+
+                </div>
+
+
+
+                <div
+                    id="selected-date-list"
+                    class="selected-date-list"
+                >
+
+                    <div class="empty-state">
+
+                        <h3>
+                            Select a date
+                        </h3>
+
+                        <p>
+                            Your Work tasks, Personal tasks and Plans
+                            will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- ADD / EDIT PLAN FORM -->
+            <!-- ============================== -->
+
+            <section
+                id="plan-form"
+                class="plan-form hidden"
+            >
+
+                <h2 id="plan-form-title">
+                    New Plan
+                </h2>
+
+
+                <div class="form-grid">
+
+
+                    <label>
+
+                        Plan Name
+
+                        <input
+                            type="text"
+                            id="plan-name"
+                            placeholder="Example: Dinner with friends"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Date
+
+                        <input
+                            type="date"
+                            id="plan-date"
+                        >
+
+                    </label>
+
+
+                    
+
+
+                    <label>
+
+                        Type
+
+                        <select id="plan-type">
+
+                            <option value="Personal">
+                                Personal
+                            </option>
+
+                            <option value="Work">
+                                Work
+                            </option>
+
+                            <option value="Appointment">
+                                Appointment
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+
+                <label class="notes-label">
+
+                    Notes
+
+                    <textarea
+                        id="plan-notes"
+                        rows="4"
+                        placeholder="Anything you want to remember..."
+                    ></textarea>
+
+                </label>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="button"
+                        id="cancel-plan"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="save-plan"
+                        class="primary-button"
+                    >
+                        Save Plan
+                    </button>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- UPCOMING PLANS -->
+            <!-- ============================== -->
+
+            <section class="plans-section">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Upcoming Plans
+                        </h2>
+
+                        <p>
+                            Your saved plans and appointments.
+                        </p>
+
+                    </div>
+
+
+                    <span id="plan-list-count">
+                        0 Plans
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="plan-list"
+                    class="plan-list"
+                >
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- PLANNER JAVASCRIPT -->
+
+    <script src="planner.js"></script>
+
+
+</body>
+
+</html>

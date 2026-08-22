@@ -1,0 +1,792 @@
+/* =========================================
+   MELLYNNA OS - SMART INBOX
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #2f4156;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   APP LAYOUT
+========================================= */
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    width: 275px;
+    min-width: 275px;
+    min-height: 100vh;
+
+    background: #2f4156;
+
+    padding: 30px 26px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+    margin-bottom: 38px;
+}
+
+.brand h2 {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.brand p {
+    color: #c8d9e6;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.nav-link {
+    display: block;
+
+    padding: 14px 16px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.nav-link:hover {
+    background: rgba(200, 217, 230, 0.15);
+}
+
+.nav-link.active {
+    background: #567c8d;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding-top: 30px;
+}
+
+.logout-link {
+    width: 100%;
+
+    border: 1px solid rgba(200, 217, 230, 0.25);
+
+    background: transparent;
+
+    color: #c8d9e6;
+
+    padding: 13px 16px;
+
+    border-radius: 11px;
+
+    text-align: left;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.logout-link:hover {
+    background: #567c8d;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    width: calc(100% - 275px);
+
+    margin-left: 275px;
+
+    padding: 42px 46px 60px;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-label {
+    color: #567c8d;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+.page-header h1 {
+    color: #2f4156;
+
+    font-size: 36px;
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+}
+
+.page-description {
+    color: #567c8d;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   SMART CARD
+========================================= */
+
+.smart-card {
+    background: #ffffff;
+
+    border: 1px solid #c8d9e6;
+
+    border-radius: 22px;
+
+    padding: 28px;
+
+    margin-bottom: 24px;
+}
+
+
+/* =========================================
+   CARD HEADING
+========================================= */
+
+.card-heading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+.card-heading h2 {
+    color: #2f4156;
+
+    font-size: 23px;
+
+    margin-bottom: 6px;
+}
+
+.card-heading p {
+    color: #567c8d;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   AI BADGE
+========================================= */
+
+.ai-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f5efeb;
+
+    color: #567c8d;
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   CAPTURE BOX
+========================================= */
+
+.capture-card textarea {
+    width: 100%;
+    min-height: 150px;
+
+    resize: vertical;
+
+    border: 1px solid #c8d9e6;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    color: #2f4156;
+
+    background: #ffffff;
+
+    outline: none;
+
+    line-height: 1.6;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.capture-card textarea:focus {
+    border-color: #567c8d;
+
+    box-shadow:
+        0 0 0 3px rgba(86, 124, 141, 0.1);
+}
+
+.capture-card textarea::placeholder {
+    color: #8da0aa;
+}
+
+
+/* =========================================
+   INPUT FOOTER
+========================================= */
+
+.input-footer {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 14px;
+}
+
+#character-count {
+    color: #78909c;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
+
+.primary-button {
+    border: none;
+
+    background: #567c8d;
+    color: #ffffff;
+
+    padding: 12px 18px;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.primary-button:hover {
+    background: #2f4156;
+}
+
+.primary-button:active {
+    transform: translateY(1px);
+}
+
+.primary-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   DESTINATION GRID
+========================================= */
+
+.destination-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.destination-card {
+    width: 100%;
+
+    min-height: 135px;
+
+    border: 1px solid #c8d9e6;
+
+    background: #ffffff;
+
+    border-radius: 17px;
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 7px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    color: #2f4156;
+
+    font-family: inherit;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.destination-card:hover {
+    background: #f5efeb;
+
+    border-color: #567c8d;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(47, 65, 86, 0.07);
+}
+
+.destination-card.selected {
+    background: #c8d9e6;
+
+    border-color: #567c8d;
+
+    box-shadow:
+        0 8px 22px rgba(47, 65, 86, 0.08);
+}
+
+.destination-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    background: #f5efeb;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+
+    margin-bottom: 2px;
+}
+
+.destination-card.selected .destination-icon {
+    background: #ffffff;
+}
+
+.destination-card strong {
+    font-size: 16px;
+}
+
+.destination-card small {
+    color: #567c8d;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   SELECTED AREA
+========================================= */
+
+.selected-area {
+    margin-top: 20px;
+
+    background: #f5efeb;
+
+    border-radius: 15px;
+
+    padding: 16px 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.selected-label {
+    display: block;
+
+    color: #78909c;
+
+    font-size: 11px;
+
+    margin-bottom: 4px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.04em;
+}
+
+#selected-destination {
+    color: #2f4156;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   RECENT CAPTURES
+========================================= */
+
+#recent-captures {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.capture-item {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    background: #f5efeb;
+
+    padding: 15px 17px;
+
+    border-radius: 14px;
+}
+
+.capture-content {
+    min-width: 0;
+}
+
+.capture-content h3 {
+    color: #2f4156;
+
+    font-size: 15px;
+
+    margin-bottom: 4px;
+
+    overflow-wrap: anywhere;
+}
+
+.capture-content p {
+    color: #567c8d;
+
+    font-size: 12px;
+}
+
+.capture-item small {
+    color: #78909c;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-state {
+    min-height: 180px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #567c8d;
+}
+
+.empty-state span {
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.empty-state h3 {
+    color: #2f4156;
+
+    font-size: 17px;
+
+    margin-bottom: 6px;
+}
+
+.empty-state p {
+    color: #78909c;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .destination-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 220px;
+        min-width: 220px;
+
+        padding: 26px 18px;
+    }
+
+    .main-content {
+        width: calc(100% - 220px);
+
+        margin-left: 220px;
+
+        padding: 32px 25px 50px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .app-layout {
+        display: block;
+    }
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+        min-width: 100%;
+
+        min-height: auto;
+
+        padding: 20px;
+    }
+
+    .brand {
+        margin-bottom: 20px;
+    }
+
+    .navigation {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 6px;
+    }
+
+    .nav-link {
+        padding: 11px 12px;
+
+        font-size: 14px;
+    }
+
+    .sidebar-bottom {
+        margin-top: 18px;
+        padding-top: 0;
+    }
+
+    .main-content {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding: 28px 18px 45px;
+    }
+
+    .page-header h1 {
+        font-size: 29px;
+    }
+
+    .smart-card {
+        padding: 20px;
+    }
+
+    .card-heading {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .selected-area {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .selected-area .primary-button {
+        width: 100%;
+    }
+
+    .capture-item {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .capture-item small {
+        white-space: normal;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+
+    .navigation {
+        grid-template-columns: 1fr;
+    }
+
+    .input-footer {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .input-footer .primary-button {
+        width: 100%;
+    }
+
+}

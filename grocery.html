@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Mellynna OS - Grocery
+    </title>
+
+   <link rel="stylesheet" href="grocery.css">
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <h2>
+                    🦋 Mellynna OS
+                </h2>
+
+                <p>
+                    Your Life, Organized.
+                </p>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a href="home.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="smart-inbox.html" class="nav-link">
+                    Smart Inbox
+                </a>
+
+                <a href="work.html" class="nav-link">
+                    Work
+                </a>
+
+                <a href="personal.html" class="nav-link">
+                    Personal
+                </a>
+
+                <a href="planner.html" class="nav-link">
+                    Planner
+                </a>
+
+                <a href="grocery.html" class="nav-link active">
+                    Grocery
+                </a>
+
+                <a href="expenses.html" class="nav-link">
+                    Expenses
+                </a>
+
+                <a href="meals.html" class="nav-link">
+                    Meals & Recipes
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="login.html" class="logout-link">
+                    Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <section class="page-header">
+
+                <div>
+
+                    <p class="page-label">
+                        Shopping List
+                    </p>
+
+                    <h1>
+                        Grocery 🛒
+                    </h1>
+
+                    <p class="page-description">
+                        Plan what you need before you shop.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="show-grocery-form"
+                    class="primary-button"
+                >
+                    + Add Item
+                </button>
+
+            </section>
+
+
+
+            <!-- SUMMARY -->
+
+            <section class="grocery-summary">
+
+                <div class="summary-card">
+
+                    <p>
+                        Items Left
+                    </p>
+
+                    <h2 id="grocery-open-count">
+                        0
+                    </h2>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <p>
+                        Bought
+                    </p>
+
+                    <h2 id="grocery-bought-count">
+                        0
+                    </h2>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <p>
+                        Estimated Total
+                    </p>
+
+                    <h2 id="grocery-total">
+                        RM 0.00
+                    </h2>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ADD / EDIT FORM -->
+
+            <section
+                id="grocery-form"
+                class="grocery-form hidden"
+            >
+
+                <h2 id="grocery-form-title">
+                    Add Grocery Item
+                </h2>
+
+
+                <div class="form-grid">
+
+
+                    <label>
+
+                        Item Name
+
+                        <input
+                            type="text"
+                            id="grocery-item-name"
+                            placeholder="Example: Milk"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Quantity
+
+                        <input
+                            type="text"
+                            id="grocery-item-quantity"
+                            placeholder="Example: 2 bottles"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Category
+
+                        <select id="grocery-item-category">
+
+                            <option value="Vegetables">
+                                Vegetables
+                            </option>
+
+                            <option value="Meat">
+                                Meat
+                            </option>
+
+                            <option value="Dairy">
+                                Dairy
+                            </option>
+
+                            <option value="Pantry">
+                                Pantry
+                            </option>
+
+                            <option value="Household">
+                                Household
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+                    <label>
+
+                        Estimated Price (RM)
+
+                        <input
+                            type="number"
+                            id="grocery-item-price"
+                            min="0"
+                            step="0.01"
+                            placeholder="0.00"
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <label class="notes-label">
+
+                    Notes
+
+                    <textarea
+                        id="grocery-item-notes"
+                        rows="3"
+                        placeholder="Optional..."
+                    ></textarea>
+
+                </label>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="button"
+                        id="cancel-grocery-item"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="save-grocery-item"
+                        class="primary-button"
+                    >
+                        Add Item
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- GROCERY LIST -->
+
+            <section class="grocery-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Shopping List
+                        </h2>
+
+                        <p>
+                            Tick items when you've bought them.
+                        </p>
+
+                    </div>
+
+
+                    <span id="grocery-item-count">
+                        0 Items
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="grocery-list"
+                    class="grocery-list"
+                >
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+   <script src="grocery.js"></script>
+
+</body>
+
+</html>

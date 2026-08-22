@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mellynna OS - Personal</title>
+
+    <link
+        rel="stylesheet"
+        href="personal.css"
+    >
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- ============================== -->
+        <!-- SIDEBAR -->
+        <!-- ============================== -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <h2>
+                    🦋 Mellynna OS
+                </h2>
+
+                <p>
+                    Your Life, Organized.
+                </p>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="navigation">
+
+                <a
+                    href="home.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+
+                <a
+                    href="smart-inbox.html"
+                    class="nav-link"
+                >
+                    Smart Inbox
+                </a>
+
+
+                <a
+                    href="work.html"
+                    class="nav-link"
+                >
+                    Work
+                </a>
+
+
+                <!-- ONLY PERSONAL IS ACTIVE -->
+
+                <a
+                    href="personal.html"
+                    class="nav-link active"
+                >
+                    Personal
+                </a>
+
+
+                <a
+                    href="planner.html"
+                    class="nav-link"
+                >
+                    Planner
+                </a>
+
+
+                <a
+                    href="grocery.html"
+                    class="nav-link"
+                >
+                    Grocery
+                </a>
+
+
+                <a
+                    href="expenses.html"
+                    class="nav-link"
+                >
+                    Expenses
+                </a>
+
+
+                <a
+                    href="meals.html"
+                    class="nav-link"
+                >
+                    Meals & Recipes
+                </a>
+
+            </nav>
+
+
+            <!-- LOGOUT -->
+
+            <div class="sidebar-bottom">
+
+                <a
+                    href="login.html"
+                    class="logout-link"
+                >
+                    Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ============================== -->
+        <!-- MAIN CONTENT -->
+        <!-- ============================== -->
+
+        <main class="main-content">
+
+
+            <!-- ============================== -->
+            <!-- PAGE HEADER -->
+            <!-- ============================== -->
+
+            <section class="page-header">
+
+                <div>
+
+                    <p class="page-label">
+                        Personal Space
+                    </p>
+
+                    <h1>
+                        Personal 🌿
+                    </h1>
+
+                    <p class="page-description">
+                        Manage your personal tasks, errands and daily life.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="show-personal-form"
+                    class="primary-button"
+                >
+                    + Add Task
+                </button>
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- SUMMARY -->
+            <!-- ============================== -->
+
+            <section class="personal-summary">
+
+
+                <!-- OPEN TASKS -->
+
+                <div class="summary-card">
+
+                    <p>
+                        Open Tasks
+                    </p>
+
+                    <h2 id="personal-open-count">
+                        0
+                    </h2>
+
+                </div>
+
+
+                <!-- COMPLETED -->
+
+                <div class="summary-card">
+
+                    <p>
+                        Completed
+                    </p>
+
+                    <h2 id="personal-completed-count">
+                        0
+                    </h2>
+
+                </div>
+
+
+                <!-- DUE TODAY -->
+
+                <div class="summary-card">
+
+                    <p>
+                        Due Today
+                    </p>
+
+                    <h2 id="personal-today-count">
+                        0
+                    </h2>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- ADD / EDIT TASK FORM -->
+            <!-- ============================== -->
+
+            <section
+                id="personal-form"
+                class="personal-form hidden"
+            >
+
+                <h2 id="personal-form-title">
+                    Add Personal Task
+                </h2>
+
+
+                <div class="form-grid">
+
+
+                    <!-- TASK NAME -->
+
+                    <label>
+
+                        Task Name
+
+                        <input
+                            type="text"
+                            id="personal-task-name"
+                            placeholder="Example: Buy toiletries"
+                        >
+
+                    </label>
+
+
+                    <!-- DUE DATE -->
+
+                    <label>
+
+                        Due Date
+
+                        <input
+                            type="date"
+                            id="personal-task-date"
+                        >
+
+                    </label>
+
+
+                    <!-- CATEGORY -->
+
+                    <label>
+
+                        Category
+
+                        <select id="personal-task-category">
+
+                            <option value="Home">
+                                Home
+                            </option>
+
+                            <option value="Errands">
+                                Errands
+                            </option>
+
+                            <option value="Shopping">
+                                Shopping
+                            </option>
+
+                            <option value="Family">
+                                Family
+                            </option>
+
+                            <option value="Friends">
+                                Friends
+                            </option>
+
+                            <option value="Self Care">
+                                Self Care
+                            </option>
+
+                            <option value="Finance">
+                                Finance
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+
+                <!-- NOTES -->
+
+                <label class="notes-label">
+
+                    Notes
+
+                    <textarea
+                        id="personal-task-notes"
+                        rows="4"
+                        placeholder="Optional notes..."
+                    ></textarea>
+
+                </label>
+
+
+                <!-- FORM BUTTONS -->
+
+                <div class="form-buttons">
+
+                    <button
+                        type="button"
+                        id="cancel-personal-task"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="save-personal-task"
+                        class="primary-button"
+                    >
+                        Add Task
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- PERSONAL TASKS -->
+            <!-- ============================== -->
+
+            <section class="personal-task-section">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Personal Tasks
+                        </h2>
+
+                        <p>
+                            Your personal to-do list.
+                        </p>
+
+                    </div>
+
+
+                    <span id="personal-task-count">
+                        0 Tasks
+                    </span>
+
+                </div>
+
+
+
+                <!-- TASK LIST -->
+
+                <div
+                    id="personal-task-list"
+                    class="personal-task-list"
+                >
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- COMPLETED TASKS -->
+            <!-- ============================== -->
+
+            <section class="completed-section">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Completed
+                        </h2>
+
+                        <p>
+                            Tasks you've finished.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="personal-completed-list"
+                    class="personal-task-list"
+                >
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- ============================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================== -->
+
+    <script src="personal.js"></script>
+
+
+</body>
+
+</html>

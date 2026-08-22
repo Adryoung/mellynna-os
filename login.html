@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mellynns OS Login </title>
+
+    <link rel="stylesheet" href="login.css">
+
+    </head>
+
+    <body>
+        <div class="login-page">
+            <div class="login-box">
+                <div class="brand">
+                    <h1>🦋 Mellynna OS</h1>
+
+                    <p>
+                        Your Life,Organized
+                    </p>
+                </div>
+
+                <div class="login-card">
+                    <h2>
+                        Welcome Back
+                    </h2>
+
+                    <p class="subtitle">
+                        Sign in to continue
+                    </p>
+
+                    <label>
+                        Email
+                        <input 
+                        type="email"
+                        id="email"
+                        placeholder="your@email.com"
+                        >
+                    </label>
+
+                    <label>
+                        Password
+                        <input 
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        >
+                    </label>
+
+                    <div class="options">
+
+                        <label class="remember">
+
+                            <input 
+                            type="checkbox"
+                            id="remember"
+                            >
+                            Remember me
+                            </label>
+
+                            <button
+                            type="button"
+                            class="forgot"
+
+                            > 
+                            Forgot Password ?
+                          </button>
+
+                          <button
+                          type="button"
+                          id="login-button"
+                          class="login-button"
+                          >
+                          Sign In
+
+                          </button>
+
+                          <p
+                          id="login-message"
+                          class="login-message"
+                          >
+                          </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Supabase Library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Mellynna OS Supabase Connection -->
+<script src="supabase-config.js"></script>
+
+<!-- Login Logic -->
+<script src="login.js"></script>
+<script src="work.js"></script>
+
+
+
+            
+        </script>
+    </body>

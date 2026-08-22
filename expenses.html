@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Mellynna OS - Expenses
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="expenses.css"
+    >
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- ============================== -->
+        <!-- SIDEBAR -->
+        <!-- ============================== -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <h2>
+                    🦋 Mellynna OS
+                </h2>
+
+                <p>
+                    Your Life, Organized.
+                </p>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a
+                    href="home.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="smart-inbox.html"
+                    class="nav-link"
+                >
+                    Smart Inbox
+                </a>
+
+                <a
+                    href="work.html"
+                    class="nav-link"
+                >
+                    Work
+                </a>
+
+                <a
+                    href="personal.html"
+                    class="nav-link"
+                >
+                    Personal
+                </a>
+
+                <a
+                    href="planner.html"
+                    class="nav-link"
+                >
+                    Planner
+                </a>
+
+                <a
+                    href="grocery.html"
+                    class="nav-link"
+                >
+                    Grocery
+                </a>
+
+                <a
+                    href="expenses.html"
+                    class="nav-link active"
+                >
+                    Expenses
+                </a>
+
+                <a
+                    href="meals.html"
+                    class="nav-link"
+                >
+                    Meals & Recipes
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a
+                    href="login.html"
+                    class="logout-link"
+                >
+                    Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ============================== -->
+        <!-- MAIN CONTENT -->
+        <!-- ============================== -->
+
+        <main class="main-content">
+
+
+            <!-- ============================== -->
+            <!-- PAGE HEADER -->
+            <!-- ============================== -->
+
+            <section class="page-header">
+
+                <div>
+
+                    <p class="page-label">
+                        Money Tracker
+                    </p>
+
+                    <h1>
+                        Expenses 💰
+                    </h1>
+
+                    <p class="page-description">
+                        Track your daily and monthly spending.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="show-expense-form"
+                    class="primary-button"
+                >
+                    + Add Expense
+                </button>
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- SUMMARY -->
+            <!-- ============================== -->
+
+            <section class="expense-summary">
+
+
+                <div class="summary-card">
+
+                    <p>
+                        This Month
+                    </p>
+
+                    <h2 id="monthly-expense-total">
+                        RM 0.00
+                    </h2>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <p>
+                        Today
+                    </p>
+
+                    <h2 id="today-expense-total">
+                        RM 0.00
+                    </h2>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <p>
+                        Transactions
+                    </p>
+
+                    <h2 id="expense-transaction-count">
+                        0
+                    </h2>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- CATEGORY SNAPSHOT -->
+            <!-- ============================== -->
+
+            <section class="category-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Spending by Category
+                        </h2>
+
+                        <p>
+                            This month's spending breakdown.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="category-grid">
+
+
+                    <div class="category-card">
+
+                        <span>
+                            🛒 Grocery
+                        </span>
+
+                        <strong id="category-grocery-total">
+                            RM 0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <span>
+                            🍽 Food
+                        </span>
+
+                        <strong id="category-food-total">
+                            RM 0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <span>
+                            🚗 Transport
+                        </span>
+
+                        <strong id="category-transport-total">
+                            RM 0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="category-card">
+
+                        <span>
+                            🧾 Bills
+                        </span>
+
+                        <strong id="category-bills-total">
+                            RM 0.00
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- ADD / EDIT EXPENSE FORM -->
+            <!-- ============================== -->
+
+            <section
+                id="expense-form"
+                class="expense-form hidden"
+            >
+
+                <h2 id="expense-form-title">
+                    Add Expense
+                </h2>
+
+
+                <div class="form-grid">
+
+
+                    <label>
+
+                        Expense Name
+
+                        <input
+                            type="text"
+                            id="expense-name"
+                            placeholder="Example: Lunch"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Amount (RM)
+
+                        <input
+                            type="number"
+                            id="expense-amount"
+                            min="0"
+                            step="0.01"
+                            placeholder="0.00"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Date
+
+                        <input
+                            type="date"
+                            id="expense-date"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Category
+
+                        <select id="expense-category">
+
+                            <option value="Grocery">
+                                Grocery
+                            </option>
+
+                            <option value="Food">
+                                Food
+                            </option>
+
+                            <option value="Transport">
+                                Transport
+                            </option>
+
+                            <option value="Bills">
+                                Bills
+                            </option>
+
+                            <option value="Shopping">
+                                Shopping
+                            </option>
+
+                            <option value="Entertainment">
+                                Entertainment
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+
+                <label class="notes-label">
+
+                    Notes
+
+                    <textarea
+                        id="expense-notes"
+                        rows="4"
+                        placeholder="Optional notes..."
+                    ></textarea>
+
+                </label>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="button"
+                        id="cancel-expense"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="save-expense"
+                        class="primary-button"
+                    >
+                        Save Expense
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ============================== -->
+            <!-- EXPENSE LIST -->
+            <!-- ============================== -->
+
+            <section class="expense-list-section">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Transactions
+                        </h2>
+
+                        <p>
+                            Your recent spending.
+                        </p>
+
+                    </div>
+
+
+                    <span id="expense-list-count">
+                        0 Entries
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="expense-list"
+                    class="expense-list"
+                >
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- EXPENSES JAVASCRIPT -->
+
+    <script src="expenses.js"></script>
+
+
+</body>
+
+</html>

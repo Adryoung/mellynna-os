@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mellynna OS - Home</title>
+
+    <link
+        rel="stylesheet"
+        href="home.css"
+    >
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- ================================= -->
+        <!-- SIDEBAR -->
+        <!-- ================================= -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <h2>
+                    🦋 Mellynna OS
+                </h2>
+
+                <p>
+                    Your Life, Organized.
+                </p>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="navigation">
+
+                <a
+                    href="home.html"
+                    class="nav-link active"
+                >
+                    Home
+                </a>
+
+
+                <a
+                    href="smart-inbox.html"
+                    class="nav-link"
+                >
+                    Smart Inbox
+                </a>
+
+
+                <a
+                    href="work.html"
+                    class="nav-link"
+                >
+                    Work
+                </a>
+
+
+                <a
+                    href="personal.html"
+                    class="nav-link"
+                >
+                    Personal
+                </a>
+
+
+                <a
+                    href="planner.html"
+                    class="nav-link"
+                >
+                    Planner
+                </a>
+
+
+                <a
+                    href="grocery.html"
+                    class="nav-link"
+                >
+                    Grocery
+                </a>
+
+
+                <a
+                    href="expenses.html"
+                    class="nav-link"
+                >
+                    Expenses
+                </a>
+
+
+                <a
+                    href="meals.html"
+                    class="nav-link"
+                >
+                    Meals & Recipes
+                </a>
+
+            </nav>
+
+
+            <!-- LOGOUT -->
+
+            <div class="sidebar-bottom">
+
+                <button
+                    type="button"
+                    class="logout-link"
+                    onclick="logoutUser()"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ================================= -->
+        <!-- MAIN CONTENT -->
+        <!-- ================================= -->
+
+        <main class="main-content">
+
+
+            <!-- ================================= -->
+            <!-- HEADER -->
+            <!-- ================================= -->
+
+            <section class="page-header">
+
+                <div>
+
+                    <p
+                        id="current-date"
+                        class="current-date"
+                    >
+                        Loading date...
+                    </p>
+
+
+                    <h1 id="greeting-text">
+                        Welcome Back 👋
+                    </h1>
+
+
+                    <p class="page-description">
+                        Here's what's happening in your life today.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================================= -->
+            <!-- SUMMARY CARDS -->
+            <!-- ================================= -->
+
+            <section class="summary-grid">
+
+
+                <!-- TODAY -->
+
+                <div class="summary-card">
+
+                    <p>
+                        Today's Focus
+                    </p>
+
+                    <h2 id="today-count">
+                        0
+                    </h2>
+
+                    <span>
+                        tasks due today
+                    </span>
+
+                </div>
+
+
+                <!-- WORK -->
+
+                <div class="summary-card">
+
+                    <p>
+                        Work
+                    </p>
+
+                    <h2 id="work-count">
+                        0
+                    </h2>
+
+                    <span>
+                        open tasks
+                    </span>
+
+                </div>
+
+
+                <!-- PERSONAL -->
+
+                <div class="summary-card">
+
+                    <p>
+                        Personal
+                    </p>
+
+                    <h2 id="personal-count">
+                        0
+                    </h2>
+
+                    <span>
+                        open tasks
+                    </span>
+
+                </div>
+
+
+                <!-- PLANS -->
+
+                <div class="summary-card">
+
+                    <p>
+                        Upcoming Plans
+                    </p>
+
+                    <h2 id="plans-count">
+                        0
+                    </h2>
+
+                    <span>
+                        upcoming
+                    </span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================================= -->
+            <!-- DASHBOARD GRID -->
+            <!-- ================================= -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- ================================= -->
+                <!-- TODAY'S FOCUS -->
+                <!-- ================================= -->
+
+                <div class="dashboard-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Today's Focus
+                            </h2>
+
+                            <p>
+                                What needs your attention today.
+                            </p>
+
+                        </div>
+
+
+                        <span class="task-count">
+                            0 Tasks
+                        </span>
+
+                    </div>
+
+
+                    <div class="task-list">
+
+                        <!--
+                            Generated automatically
+                            by home.js
+                        -->
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================================= -->
+                <!-- UPCOMING -->
+                <!-- ================================= -->
+
+                <div class="dashboard-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Upcoming
+                            </h2>
+
+                            <p>
+                                Your next plans.
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            href="planner.html"
+                            class="view-link"
+                        >
+                            View Planner
+                        </a>
+
+                    </div>
+
+
+                    <div class="upcoming-list">
+
+                        <!--
+                            Generated automatically
+                            by home.js
+                        -->
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================================= -->
+            <!-- SPENDING -->
+            <!-- ================================= -->
+
+            <section class="dashboard-card spending-card">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Spending This Month
+                        </h2>
+
+                        <p>
+                            Keep an eye on your monthly spending.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="expenses.html"
+                        class="view-link"
+                    >
+                        View Expenses
+                    </a>
+
+                </div>
+
+
+
+                <div class="spending-summary">
+
+
+                    <!-- TOTAL -->
+
+                    <div class="spending-total">
+
+                        <p>
+                            Total Spending
+                        </p>
+
+                        <h2 id="spending-total">
+                            RM 0.00
+                        </h2>
+
+                    </div>
+
+
+
+                    <!-- BREAKDOWN -->
+
+                    <div class="spending-breakdown">
+
+
+                        <div class="spending-item">
+
+                            <span>
+                                Grocery / Kitchen
+                            </span>
+
+                            <strong id="kitchen-spending">
+                                RM 0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div class="spending-item">
+
+                            <span>
+                                Daily & Others
+                            </span>
+
+                            <strong id="daily-spending">
+                                RM 0.00
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================================= -->
+            <!-- QUICK ACCESS -->
+            <!-- ================================= -->
+
+            <section class="dashboard-card">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Quick Access
+                        </h2>
+
+                        <p>
+                            Jump straight into your day.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="quick-access-grid">
+
+
+                    <a
+                        href="work.html"
+                        class="quick-card"
+                    >
+
+                        <span class="quick-icon">
+                            💼
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Work
+                            </h3>
+
+                            <p>
+                                Manage work tasks
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <a
+                        href="personal.html"
+                        class="quick-card"
+                    >
+
+                        <span class="quick-icon">
+                            🌿
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Personal
+                            </h3>
+
+                            <p>
+                                Personal to-do list
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <a
+                        href="planner.html"
+                        class="quick-card"
+                    >
+
+                        <span class="quick-icon">
+                            📅
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Planner
+                            </h3>
+
+                            <p>
+                                Plan your schedule
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <a
+                        href="grocery.html"
+                        class="quick-card"
+                    >
+
+                        <span class="quick-icon">
+                            🛒
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Grocery
+                            </h3>
+
+                            <p>
+                                Shopping list
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <a
+                        href="expenses.html"
+                        class="quick-card"
+                    >
+
+                        <span class="quick-icon">
+                            💳
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Expenses
+                            </h3>
+
+                            <p>
+                                Track spending
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <a
+                        href="meals.html"
+                        class="quick-card"
+                    >
+
+                        <span class="quick-icon">
+                            🍳
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Meals & Recipes
+                            </h3>
+
+                            <p>
+                                Plan meals
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- ================================= -->
+    <!-- SUPABASE -->
+    <!-- ================================= -->
+
+   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase-config.js"></script>
+<script src="auth.js"></script>
+<script src="home.js"></script>
+<script src="work.js"></script>
+</body>
+
+</html>

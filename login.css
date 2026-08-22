@@ -1,0 +1,337 @@
+/* ============================== */
+/* RESET */
+/* ============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ============================== */
+/* BODY */
+/* ============================== */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5EFEB;
+    color: #2F4156;
+}
+
+
+/* ============================== */
+/* LOGIN PAGE */
+/* ============================== */
+
+.login-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* ============================== */
+/* LOGIN WRAPPER */
+/* ============================== */
+
+.login-box {
+    width: 100%;
+    max-width: 480px;
+}
+
+
+/* ============================== */
+/* BRAND */
+/* ============================== */
+
+.brand {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.brand h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+    color: #2F4156;
+}
+
+.brand p {
+    color: #567C8D;
+    font-size: 16px;
+}
+
+
+/* ============================== */
+/* LOGIN CARD */
+/* ============================== */
+
+.login-card {
+    background-color: #FFFFFF;
+
+    padding: 35px;
+
+    border: 1px solid #C8D9E6;
+    border-radius: 22px;
+}
+
+.login-card h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+
+/* ============================== */
+/* SUBTITLE */
+/* ============================== */
+
+.subtitle {
+    color: #567C8D;
+    margin-bottom: 28px;
+}
+
+
+/* ============================== */
+/* LABEL */
+/* ============================== */
+
+.login-card label {
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-weight: bold;
+}
+
+
+/* ============================== */
+/* EMAIL & PASSWORD INPUT */
+/* ============================== */
+
+.login-card input[type="email"],
+.login-card input[type="password"] {
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 13px 14px;
+
+    border: 1px solid #C8D9E6;
+    border-radius: 10px;
+
+    background-color: #FFFFFF;
+
+    color: #2F4156;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+/* INPUT FOCUS */
+
+.login-card input[type="email"]:focus,
+.login-card input[type="password"]:focus {
+    border-color: #567C8D;
+}
+
+
+/* ============================== */
+/* LOGIN OPTIONS */
+/* ============================== */
+
+.options {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    width: 100%;
+
+    margin-bottom: 22px;
+}
+
+
+/* ============================== */
+/* REMEMBER ME */
+/* ============================== */
+
+.remember {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 0 !important;
+
+    font-weight: normal !important;
+
+    white-space: nowrap;
+}
+
+.remember input {
+    margin: 0;
+}
+
+
+/* ============================== */
+/* FORGOT PASSWORD */
+/* ============================== */
+
+.forgot {
+    border: none;
+
+    background: none;
+
+    color: #567C8D;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+
+/* ============================== */
+/* LOGIN BUTTON */
+/* ============================== */
+
+.login-button {
+    width: 100%;
+
+    padding: 14px;
+
+    background-color: #567C8D;
+
+    color: #FFFFFF;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.login-button:hover {
+    background-color: #2F4156;
+}
+
+
+/* ============================== */
+/* LOGIN MESSAGE */
+/* ============================== */
+
+.login-message {
+    margin-top: 16px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #567C8D;
+}
+
+
+/* ============================== */
+/* SMALL SCREEN */
+/* ============================== */
+
+@media (max-width: 480px) {
+
+    .login-page {
+        padding: 16px;
+        align-items: flex-start;
+    }
+
+    .login-box {
+        margin-top: 30px;
+    }
+
+    .brand h1 {
+        font-size: 28px;
+    }
+
+    .login-card {
+        padding: 25px 20px;
+        border-radius: 18px;
+    }
+
+    .login-card h2 {
+        font-size: 26px;
+    }
+
+    .options {
+        gap: 15px;
+    }
+
+    .remember {
+        font-size: 14px;
+    }
+
+    .forgot {
+        font-size: 13px;
+    }
+
+}
+
+
+/* ============================== */
+/* VERY SMALL SCREEN */
+/* ============================== */
+
+@media (max-width: 360px) {
+
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .forgot {
+        margin-left: 26px;
+    }
+
+}
+
+.logout-link {
+    width: 100%;
+    text-align: left;
+
+    border: none;
+    background: none;
+
+    color: #C8D9E6;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font: inherit;
+}
+
+.logout-link:hover {
+    background-color: #567C8D;
+    color: #FFFFFF;
+}

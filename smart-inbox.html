@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mellynna OS - Smart Inbox</title>
+
+    <link
+        rel="stylesheet"
+        href="smart-inbox.css"
+    >
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <h2>🦋 Mellynna OS</h2>
+            <p>Your Life, Organized.</p>
+        </div>
+
+        <nav class="navigation">
+
+            <a href="home.html" class="nav-link">
+                Home
+            </a>
+
+            <a
+                href="smart-inbox.html"
+                class="nav-link active"
+            >
+                Smart Inbox
+            </a>
+
+            <a href="work.html" class="nav-link">
+                Work
+            </a>
+
+            <a href="personal.html" class="nav-link">
+                Personal
+            </a>
+
+            <a href="planner.html" class="nav-link">
+                Planner
+            </a>
+
+            <a href="grocery.html" class="nav-link">
+                Grocery
+            </a>
+
+            <a href="expenses.html" class="nav-link">
+                Expenses
+            </a>
+
+            <a href="meals.html" class="nav-link">
+                Meals & Recipes
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                id="logoutBtn"
+                class="logout-link"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <p class="page-label">
+                Smart Inbox
+            </p>
+
+            <h1>
+                Capture Anything ✨
+            </h1>
+
+            <p class="page-description">
+                Drop a thought here and send it
+                to the right place.
+            </p>
+
+        </header>
+
+
+        <!-- =========================
+             CAPTURE BOX
+        ========================== -->
+
+        <section class="smart-card capture-card">
+
+            <div class="card-heading">
+
+                <div>
+                    <h2>What's on your mind?</h2>
+
+                    <p>
+                        Task, reminder, grocery,
+                        expense or plan.
+                    </p>
+                </div>
+
+                <span class="ai-badge">
+                    ✨ Smart
+                </span>
+
+            </div>
+
+
+            <textarea
+                id="smart-input"
+                placeholder="Example: Follow up supplier quotation tomorrow..."
+                maxlength="500"
+            ></textarea>
+
+
+            <div class="input-footer">
+
+                <span id="character-count">
+                    0 / 500
+                </span>
+
+                <button
+                    type="button"
+                    id="analyse-button"
+                    class="primary-button"
+                >
+                    Continue
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ROUTING
+        ========================== -->
+
+        <section
+            id="routing-card"
+            class="smart-card hidden"
+        >
+
+            <div class="card-heading">
+
+                <div>
+                    <h2>Where should this go?</h2>
+
+                    <p>
+                        Choose the best destination.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="destination-grid">
+
+                <button
+                    type="button"
+                    class="destination-card"
+                    data-destination="work"
+                >
+                    <span class="destination-icon">
+                        💼
+                    </span>
+
+                    <strong>Work</strong>
+
+                    <small>
+                        Office tasks & follow-ups
+                    </small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="destination-card"
+                    data-destination="personal"
+                >
+                    <span class="destination-icon">
+                        🌿
+                    </span>
+
+                    <strong>Personal</strong>
+
+                    <small>
+                        Personal to-do
+                    </small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="destination-card"
+                    data-destination="planner"
+                >
+                    <span class="destination-icon">
+                        📅
+                    </span>
+
+                    <strong>Planner</strong>
+
+                    <small>
+                        Events & plans
+                    </small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="destination-card"
+                    data-destination="grocery"
+                >
+                    <span class="destination-icon">
+                        🛒
+                    </span>
+
+                    <strong>Grocery</strong>
+
+                    <small>
+                        Things to buy
+                    </small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="destination-card"
+                    data-destination="expense"
+                >
+                    <span class="destination-icon">
+                        💳
+                    </span>
+
+                    <strong>Expense</strong>
+
+                    <small>
+                        Spending & payments
+                    </small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="destination-card"
+                    data-destination="meal"
+                >
+                    <span class="destination-icon">
+                        🍳
+                    </span>
+
+                    <strong>Meal</strong>
+
+                    <small>
+                        Meals & recipe ideas
+                    </small>
+                </button>
+
+            </div>
+
+
+            <!-- SELECTED DESTINATION -->
+
+            <div
+                id="selected-area"
+                class="selected-area hidden"
+            >
+
+                <div>
+
+                    <span class="selected-label">
+                        Destination
+                    </span>
+
+                    <strong id="selected-destination">
+                        Work
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="save-smart-item"
+                    class="primary-button"
+                >
+                    Send to Work →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RECENT CAPTURES
+        ========================== -->
+
+        <section class="smart-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <h2>Recent Captures</h2>
+
+                    <p>
+                        Things you've recently
+                        organised.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="recent-captures">
+
+                <div class="empty-state">
+
+                    <span>✨</span>
+
+                    <h3>
+                        Your inbox is clear
+                    </h3>
+
+                    <p>
+                        Capture something above
+                        to get started.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     SUPABASE
+========================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+<script src="supabase-config.js"></script>
+
+<script src="auth.js"></script>
+
+<script src="smart-inbox.js"></script>
+
+</body>
+
+</html>
